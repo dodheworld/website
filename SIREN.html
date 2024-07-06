@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Code Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>추천인 코드를 입력하세요</h1>
+        <input type="text" id="referralCode" placeholder="절호의 기회">
+        <br>
+        <button onclick="submitReferralCode()">Submit</button>
+    </div>
+
+    <script>
+        function submitReferralCode() {
+            var code = document.getElementById('referralCode').value;
+            if (code) {
+                var url = "https://www.SIREN.com/referral?code=" + code;
+                window.location.href = url;
+            } else {
+                alert("추천인 코드를 입력하세요");
+            }
+        }
+    </script>
+</body>
+</html>
